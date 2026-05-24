@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rishu Ray | Full-Stack Developer & AI Solutions Expert</title>
+  <meta name="description" content="Portfolio of Rishu Ray, a Full-Stack Developer specializing in high-performance web applications, AI API integrations (Gemini, Groq), and open-source contributions.">
+  <meta name="author" content="Rishu Ray">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Custom Cursor -->
+  <div id="custom-cursor-dot"></div>
+  <div id="custom-cursor-circle"></div>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span class="logo-symbol">&lt;</span> Rishu Ray <span class="logo-symbol">/&gt;</span>
+      </a>
+      
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn clickable" id="theme-toggle" aria-label="Toggle theme">
+          <!-- Moon Icon (Dark Mode Trigger) -->
+          <svg class="moon-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+          <!-- Sun Icon (Light Mode Trigger) -->
+          <svg class="sun-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 4.343l-.707-.707M12 7a5 5 0 100 10 5 5 0 000-10z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Btn -->
+        <button class="mobile-menu-btn clickable" id="mobile-menu-btn" aria-label="Open navigation menu">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 1.5rem; height: 1.5rem;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-subtitle">a Developer</span>
+        <h1 class="hero-title">Crafting <span class="accent">AI-Integrated</span> & Modern Web Solutions</h1>
+        <p class="hero-description">
+          Hi, I'm <strong>Rishu Ray</strong>. I build high-performance web applications, optimize complex developer platforms, and integrate cutting-edge models (like Gemini and Groq) into production workflows. Currently based in Bangalore, India.
+        </p>
+        <div class="hero-ctas">
+          <a href="#" class="cmd-button clickable" id="download-resume-btn">curl -O rishu_resume.pdf</a>
+          <a href="#projects" class="btn btn-secondary clickable">Explore My Work</a>
+        </div>
+      </div>
+      
+      <!-- Interactive Terminal CLI Widget -->
+      <div class="terminal-widget shadow-lg" id="terminal-widget">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="terminal-btn-dot close"></span>
+            <span class="terminal-btn-dot minimize"></span>
+            <span class="terminal-btn-dot maximize"></span>
+          </div>
+          <span class="terminal-title">guest@rishuray.dev:~</span>
+          <div></div>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-welcome">
+            Welcome to Rishu Ray's interactive CLI (v2.6.0)<br>
+            Type commands or click the actions below to execute modules.<br>
+            --------------------------------------------------------
+          </div>
+          <div class="terminal-line">
+            <span class="terminal-prompt">guest@rishuray.dev:~$ </span><span class="terminal-command-text" id="terminal-command">system.info()</span>
+            <div class="terminal-output" id="terminal-output">
+              Name: Rishu Ray<br>
+              Focus: Full Stack Developer & AI Integration<br>
+              Status: Open to internships & freelance contracts<br>
+              Location: Bangalore, India<br>
+              GitHub: github.com/rayrishu19-wq
+            </div>
+          </div>
+        </div>
+        
+        <!-- Quick Action Buttons inside Terminal -->
+        <div class="terminal-actions-bar">
+          <span class="terminal-actions-title">Execute:</span>
+          <button class="terminal-action-btn clickable" data-cmd="project.info('explain-code')">project.info('explain-code')</button>
+          <button class="terminal-action-btn clickable" data-cmd="project.info('video-summarizer')">project.info('video-summarizer')</button>
+          <button class="terminal-action-btn clickable" data-cmd="project.info('hoppscotch')">project.info('hoppscotch')</button>
+          <button class="terminal-action-btn clickable" data-cmd="experience.summary()">experience.summary()</button>
+          <button class="terminal-action-btn clickable" data-cmd="clear()">clear()</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Latest Projects</h2>
+        <p class="section-desc">Stuff I made that actually works (mostly). Click them to inspect details or run them in the terminal above.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: Explain My Code -->
+        <article class="creative-card project-card clickable" data-project-cmd="project.info('explain-code')">
+          <div class="project-image-wrapper">
+            <img src="pictures/explain-my-code.png" alt="Explain My Code Mockup" class="project-image" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">Gemini API</span>
+              <span class="project-tag">Groq API</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">Premium UI</span>
+            </div>
+            <h3 class="project-title">Explain My Code</h3>
+            <p class="project-description">
+              An AI-powered explanation tool designed for developers. Paste complex code snippets and get structured, beginner-friendly explanations instantly. Integrated Groq and Gemini APIs to secure sub-second response times.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/rayrishu19-wq/explain-my-code" target="_blank" class="project-link clickable">
+                <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                Repository
+              </a>
+              <span class="project-link" style="opacity: 0.5;">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                Live Demo
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Video Summarizer -->
+        <article class="creative-card project-card clickable" data-project-cmd="project.info('video-summarizer')">
+          <div class="project-image-wrapper">
+            <img src="pictures/video-summarizer.png" alt="Video Summarizer Mockup" class="project-image" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">MongoDB</span>
+              <span class="project-tag">AI Models</span>
+              <span class="project-tag">Analytics</span>
+            </div>
+            <h3 class="project-title">AI Video Content Summarizer</h3>
+            <p class="project-description">
+              A comprehensive utility that processes long videos (such as lectures and conferences) and distills them into structured text summaries and chronological bullet points. Optimizes MongoDB storage configurations to speed up token compilation pipelines.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/rayrishu19-wq/video-summary-using-ai-tools" target="_blank" class="project-link clickable">
+                <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                Repository
+              </a>
+              <span class="project-link" style="opacity: 0.5;">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                Live Demo
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Hoppscotch Contributions -->
+        <article class="creative-card project-card clickable" data-project-cmd="project.info('hoppscotch')">
+          <div class="project-image-wrapper">
+            <img src="pictures/hoppscotch-contrib.png" alt="Hoppscotch Contributions Mockup" class="project-image" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">Open Source</span>
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Vue.js</span>
+              <span class="project-tag">A11y</span>
+            </div>
+            <h3 class="project-title">Hoppscotch Contributions</h3>
+            <p class="project-description">
+              Contributed critical accessibility enhancements (aria-labels and UI navigation indicators) to Hoppscotch, a major open-source API ecosystem used by developers worldwide. Pull Request successfully merged and published in official release v2026.4.0.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/hoppscotch/hoppscotch" target="_blank" class="project-link clickable">
+                <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                Hoppscotch Repo
+              </a>
+              <a href="https://github.com/hoppscotch/hoppscotch/pulls?q=is%3Apr+author%3Arayrishu19-wq" target="_blank" class="project-link clickable">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                View Merged PR
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Indian Restaurants Web -->
+        <article class="creative-card project-card clickable" data-project-cmd="project.info('restaurants')">
+          <div class="project-image-wrapper">
+            <img src="pictures/indian-restaurants.png" alt="Indian Restaurants Mockup" class="project-image" loading="lazy">
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">HTML5</span>
+              <span class="project-tag">Vanilla CSS</span>
+              <span class="project-tag">Responsive</span>
+              <span class="project-tag">UI/UX Design</span>
+            </div>
+            <h3 class="project-title">Indian Restaurants Web</h3>
+            <p class="project-description">
+              A premium, highly interactive client-facing showcase for traditional cuisine. Includes sleek smooth-scrolling animations, a modern reservation scheduler layout, and custom CSS styling without heavy framework overhead.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/rayrishu19-wq/-Indian-restaurants-" target="_blank" class="project-link clickable">
+                <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                Repository
+              </a>
+              <span class="project-link" style="opacity: 0.5;">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                Live Demo
+              </span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Proficiency</span>
+        <h2 class="section-title">Technical Expertise</h2>
+        <p class="section-desc">A comprehensive overview of my technical skills and proficiency levels in various programming languages, frameworks, and databases.</p>
+      </div>
+
+      <div class="skills-container">
+        <!-- Tech Stacks -->
+        <div class="skills-category">
+          <h3 class="skills-category-title">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+            Languages & Core Stack
+          </h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">JavaScript & ES6+</span>
+                <span class="skill-percent">92%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="92%"></div></div>
+            </div>
+            
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">TypeScript</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">HTML5 / CSS3 / Grid</span>
+                <span class="skill-percent">95%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Python</span>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="skills-category-title">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            Frameworks & Databases
+          </h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Node.js / Express</span>
+                <span class="skill-percent">88%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">MongoDB / SQL</span>
+                <span class="skill-percent">82%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="82%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Vue.js / React</span>
+                <span class="skill-percent">78%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="78%"></div></div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">API Design & Integration (REST/GraphQL)</span>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="certs-grid">
+          <!-- Cert 1 -->
+          <div class="creative-card cert-card clickable">
+            <div class="cert-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+            </div>
+            <h4 class="cert-title">Responsive Web Design</h4>
+            <p class="cert-issuer">freeCodeCamp</p>
+            <span class="cert-link">Verification Badge</span>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="creative-card cert-card clickable">
+            <div class="cert-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+            </div>
+            <h4 class="cert-title">JavaScript Algorithms</h4>
+            <p class="cert-issuer">freeCodeCamp</p>
+            <span class="cert-link">Verification Badge</span>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="creative-card cert-card clickable">
+            <div class="cert-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 009 11V7a4 4 0 00-8 0v3c0 .6.2 1.1.6 1.5l.6.6a14.07 14.07 0 005.197 3.303m3.44-2.04a13.86 13.86 0 002.753-9.571M13 21c3.517 0 6.799-1.009 9.571-2.753m-2.04-3.44l-.09.054A13.916 13.916 0 0013 15v-4a4 4 0 00-8 0v3c0 .6-.2 1.1-.6 1.5l-.6.6A14.07 14.07 0 001 19.571m3.44-2.04A13.86 13.86 0 0011 13H9"></path></svg>
+            </div>
+            <h4 class="cert-title">Full Stack Development</h4>
+            <p class="cert-issuer">Professional Certificate</p>
+            <span class="cert-link">Verify Credentials</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Education Timeline -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Timeline</span>
+        <h2 class="section-title">Work & Education</h2>
+        <p class="section-desc">My professional milestone progression over the years, detailing open source merged work and structural learning.</p>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Item 1: Hoppscotch -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-date">2026</span>
+            <span class="timeline-org">Hoppscotch (Global API Client Ecosystem)</span>
+          </div>
+          <h3 class="timeline-title">Open Source Contributor</h3>
+          <div class="timeline-desc">
+            Contributed production-level accessibility features to an ecosystem used by thousands of global developers:
+            <ul>
+              <li>Implemented crucial accessibility attributes (`aria-labels`) and tab-traversal logic for the key API composer UI.</li>
+              <li>Successfully passed strict ESLint requirements, automated testing suites, and strict code reviews from senior maintainers.</li>
+              <li>Official PR merged and shipped in v2026.4.0 release.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 2: Explain My Code -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-date">2024 – Present</span>
+            <span class="timeline-org">Independent / Client Projects</span>
+          </div>
+          <h3 class="timeline-title">AI Solutions Architect</h3>
+          <div class="timeline-desc">
+            Architected and deployed "Explain My Code", an AI application showcasing quick NLP code parsing:
+            <ul>
+              <li>Integrated Groq API for lightning-speed generation times and Gemini API as a backup logic controller.</li>
+              <li>Designed and custom-styled the client application to ensure responsive styling and dark mode capability.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 3: Analytics Dashboard -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-date">2024</span>
+            <span class="timeline-org">Freelance Services</span>
+          </div>
+          <h3 class="timeline-title">Full Stack Developer</h3>
+          <div class="timeline-desc">
+            Developed and shipped responsive analytic trackers and visual dashboard templates:
+            <ul>
+              <li>Implemented complex, native SVG-based chart engines and graph renders without loading bloated libraries.</li>
+              <li>Configured local memory storage buffers and cached endpoints to optimize client data-refresh rates.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 4: Education -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-date">Pursuing</span>
+            <span class="timeline-org">Bangalore Institute of Technology</span>
+          </div>
+          <h3 class="timeline-title">Bachelor of Technology (B.Tech)</h3>
+          <div class="timeline-desc">
+            Completing formal engineering foundation with core coursework in Algorithms, Database Management Systems (DBMS), and Computer Networks. Maintains a strong data-driven mindset.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Connection</span>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-desc">Have a question or want to work together? Feel free to reach out using the form below or through my coordinates.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-list">
+          <!-- Email Card -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <div class="contact-info-details">
+              <span class="contact-info-label">Email</span>
+              <a href="mailto:rayrishu19@gmail.com" class="contact-info-value clickable">rayrishu19@gmail.com</a>
+            </div>
+          </div>
+
+          <!-- GitHub Card -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 1.25rem; height: 1.25rem;"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </div>
+            <div class="contact-info-details">
+              <span class="contact-info-label">GitHub</span>
+              <a href="https://github.com/rayrishu19-wq" target="_blank" class="contact-info-value clickable">github.com/rayrishu19-wq</a>
+            </div>
+          </div>
+
+          <!-- Location Card -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <div class="contact-info-details">
+              <span class="contact-info-label">Location</span>
+              <span class="contact-info-value">Bangalore, India</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" action="#" method="POST">
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input clickable" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input clickable" placeholder="john@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" class="form-textarea clickable" placeholder="Your message about how happy you would be to have me in your company..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary submit-btn clickable">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <p class="footer-copy">&copy; 2026 Rishu Ray. Built with pride and AI assist.</p>
+      
+      <div class="footer-socials">
+        <!-- GitHub -->
+        <a href="https://github.com/rayrishu19-wq" target="_blank" class="footer-social-link clickable" aria-label="GitHub Profile">
+          <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/rishu-ray" target="_blank" class="footer-social-link clickable" aria-label="LinkedIn Profile">
+          <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
