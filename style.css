@@ -322,34 +322,84 @@ header {
   background: none;
   border: none;
   color: hsl(var(--foreground));
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.5rem;
+  height: 1.1rem;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 110;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: hsl(var(--foreground));
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-open .line-1 {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-open .line-2 {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.mobile-menu-open .line-3 {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 4.5rem;
-    left: 0;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 100%;
     width: 100%;
-    background-color: hsl(var(--background));
-    border-bottom: 1px solid hsl(var(--border));
-    padding: 1.5rem;
+    height: 100vh;
+    background-color: hsl(var(--background) / 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: none;
+    padding: 7rem 2rem 2rem 2rem;
     flex-direction: column;
-    gap: 1.25rem;
-    align-items: flex-start;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    gap: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none;
+    z-index: 99;
   }
   
   .nav-links.open {
-    display: flex;
+    transform: translateX(-100%);
   }
+
+  .nav-link {
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-links.open .nav-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-links.open li:nth-child(1) .nav-link { transition-delay: 0.1s; }
+  .nav-links.open li:nth-child(2) .nav-link { transition-delay: 0.15s; }
+  .nav-links.open li:nth-child(3) .nav-link { transition-delay: 0.2s; }
+  .nav-links.open li:nth-child(4) .nav-link { transition-delay: 0.25s; }
+  .nav-links.open li:nth-child(5) .nav-link { transition-delay: 0.3s; }
   
   .mobile-menu-btn {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
   }
 }
 
@@ -691,7 +741,30 @@ section {
 
 @media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.25rem;
+    padding: 0.5rem 0.25rem 1.5rem 0.25rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--creative-green) / 0.3) transparent;
+  }
+
+  .projects-grid::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .projects-grid::-webkit-scrollbar-thumb {
+    background: hsl(var(--creative-green) / 0.3);
+    border-radius: 4px;
+  }
+
+  .project-card {
+    flex: 0 0 85vw;
+    max-width: 330px;
+    scroll-snap-align: center;
   }
 }
 
@@ -882,9 +955,34 @@ section {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .certs-grid {
-    grid-template-columns: 1fr;
+    grid-column: span 1;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0.5rem 0.25rem 1.5rem 0.25rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--creative-green) / 0.3) transparent;
+  }
+
+  .certs-grid::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .certs-grid::-webkit-scrollbar-thumb {
+    background: hsl(var(--creative-green) / 0.3);
+    border-radius: 4px;
+  }
+
+  .cert-card {
+    flex: 0 0 80vw;
+    max-width: 280px;
+    scroll-snap-align: center;
   }
 }
 
@@ -1209,4 +1307,161 @@ footer {
 .footer-social-link svg {
   width: 1.1rem;
   height: 1.1rem;
+}
+
+/* ==========================================================================
+   Antigravity Premium Animation System & Mobile Fit Upgrades
+   ========================================================================== */
+
+/* 1. Global Page transitions & Background Canvas */
+body {
+  transition: background 0.5s ease, color 0.5s ease;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+#ambient-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  pointer-events: none;
+  transition: opacity 1s ease;
+  opacity: 0.85;
+}
+
+.dark #ambient-canvas {
+  opacity: 0.6;
+}
+
+header, footer, .creative-card, .skills-category, .contact-info-card, .form-input, .form-textarea {
+  transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease, box-shadow 0.3s;
+}
+
+/* 2. Scroll Reveal Transitions */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-element.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-element.reveal-right {
+  transform: translateX(40px);
+}
+
+.reveal-element.reveal-scale {
+  transform: scale(0.95) translateY(20px);
+}
+
+.reveal-element.active {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* staggered list reveals */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-stagger.active > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.active > *:nth-child(1) { transition-delay: 0.1s; }
+.reveal-stagger.active > *:nth-child(2) { transition-delay: 0.2s; }
+.reveal-stagger.active > *:nth-child(3) { transition-delay: 0.3s; }
+.reveal-stagger.active > *:nth-child(4) { transition-delay: 0.4s; }
+.reveal-stagger.active > *:nth-child(5) { transition-delay: 0.5s; }
+
+/* 3. 3D Hover Tilt Layering */
+.project-card, .terminal-widget {
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card.no-tilt, .terminal-widget.no-tilt {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-content, .terminal-header, .terminal-body {
+  transform: translateZ(25px);
+  transform-style: preserve-3d;
+}
+
+.project-title, .terminal-title, .terminal-actions-bar {
+  transform: translateZ(15px);
+}
+
+/* 4. Magnetic Action Buttons transitions */
+.theme-toggle-btn, .cmd-button, .btn-secondary, .footer-social-link {
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.theme-toggle-btn.no-magnetic, .cmd-button.no-magnetic, .btn-secondary.no-magnetic, .footer-social-link.no-magnetic {
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* 5. Mobile Fit & Zoom Prevention */
+@media (max-width: 768px) {
+  .form-input, .form-textarea {
+    font-size: 16px !important; /* iOS Auto-zoom prevention */
+  }
+
+  .terminal-actions-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  }
+
+  .terminal-actions-bar::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .terminal-actions-bar::-webkit-scrollbar-thumb {
+    background: rgba(73, 230, 166, 0.3);
+    border-radius: 10px;
+  }
+  
+  .terminal-widget {
+    height: 27rem; /* slightly extra space for horizontal scrolling action bar */
+  }
+}
+
+/* 6. Typography & visual fixes */
+.hero-title span.accent {
+  background: linear-gradient(120deg, hsl(var(--creative-green)), #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.logo-symbol {
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 1px hsl(var(--creative-green) / 0.5)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 8px hsl(var(--creative-green) / 0.8)); }
 }
