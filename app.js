@@ -127,10 +127,21 @@ document.addEventListener('DOMContentLoaded', () => {
       "Focus: Premium UI, smooth transitions, mobile-first responsiveness, and structural SEO tags.",
       "Repo: github.com/rayrishu19-wq/-Indian-restaurants-"
     ],
+    "project.info('meshery')": [
+      "> Accessing CNCF management plane repository...",
+      "> Checking merged logs for author: rayrishu19-wq...",
+      "------------------------------------------",
+      "Target: Meshery & freeCodeCamp Core Ecosystems",
+      "Contribution: Meshplay UI modules & curriculum updates",
+      "Stack: React, Golang, Next.js, JavaScript/JSON",
+      "Status: ACTIVE CONTRIBUTIONS (Multiple PRs merged)",
+      "Repo: github.com/meshery/meshery"
+    ],
     "experience.summary()": [
       "> query_milestones()",
       "------------------------------------------",
       "• [2026] Open Source Contributor @ Hoppscotch API Client",
+      "• [2025] Open Source Contributor @ Meshery & freeCodeCamp",
       "• [2024] AI Solutions Architect @ Explain My Code App",
       "• [2024] Full Stack Web Developer @ Modern Dashboards Freelance",
       "• [Pursuing] B.Tech @ Bangalore Institute of Technology"
