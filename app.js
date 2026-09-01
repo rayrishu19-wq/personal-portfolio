@@ -106,7 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
       "Role: Backend & Architecture Developer",
       "Stack: Node.js, MongoDB, Express, Gemini API",
       "Features: Processes large technical lectures and extracts structured chronological highlights.",
-      "Repo: github.com/rayrishu19-wq/video-summary-using-ai-tools"
+      "Repo: github.com/rayrishu19-wq/video-summary-using-ai-tools",
+      "Live Demo: rayrishu19-wq.github.io/video-summary-using-ai-tools"
     ],
     "project.info('hoppscotch')": [
       "> Connecting to global open source repository...",
