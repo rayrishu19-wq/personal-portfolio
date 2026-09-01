@@ -95,7 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
       "Stack: Gemini API, Groq API, Node.js, HTML5/CSS3",
       "Response Time: Sub-second latency (<0.8s) via Groq",
       "Description: AI-powered code explanation tool designed for developer productivity. Renders side-by-side annotations.",
-      "Repo: github.com/rayrishu19-wq/explain-my-code"
+      "Repo: github.com/rayrishu19-wq/explain-my-code",
+      "Live Demo: rayrishu19-wq.github.io/explain-my-code"
     ],
     "project.info('video-summarizer')": [
       "> Loading transcription pipeline... [SUCCESS]",
